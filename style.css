@@ -1,0 +1,16 @@
+.row {
+  margin: 20px;
+  height: 200px;
+  border-radius: 30px;
+}
+.col2 {
+  margin: 0 20px 0 20px;
+}
+
+.color {
+  border: 1px solid orange;
+}
+
+.header {
+  border: 1px solid orangered;
+}
