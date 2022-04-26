@@ -1,5 +1,9 @@
 <?php
 
+// leer => select * from vista_usuarios;
+// insertar => call pa_insertar_usuario(152436, 'HECTOR MANUEL','PEREZ LUNA',25, 'MASCULINO', 'HECTOR@GMAIL.COM');
+// eliminar => call pa_borrar_usuario(11111);
+// actualizar => call pa_update_usuario(2222, '3prueba','3prueba',35, 'masculino2', '2prueba@GMAIL.COM');
 class MySQLDB
 {
 
@@ -20,14 +24,14 @@ class MySQLDB
 
     function connect(){
         
-        $this->connection = mysqli_connect(
+            $this->connection = mysqli_connect(
             $this->host,
             $this->usuario,
             $this->pass,
             $this->db
         );
 
-        $this->connection->set_charset("utf8");
+        // $this->connection->set_charset("utf8");
 
         if (mysqli_connect_errno()) {
             print("error al conectarse");
@@ -45,15 +49,15 @@ class MySQLDB
             if (mysqli_num_rows($result) > 0) {
                 while ($row = mysqli_fetch_assoc($result)) {
 
-                    echo "Codigo:" . $row['cedula'] . "<br>";
-                    echo "Nombre:" . $row['nombre'] . "<br>";
-                    echo "apellido:" . $row['apellido'] . "<br>";
-                    echo "edad:" . $row['edad'] . "<br>";
-                    echo "sexo:" . $row['sexo'] . "<br>";
-                    echo "correo:" . $row['correo'] . "<br>";
+                    // echo "Codigo:" . $row['cedula'] . "<br>";
+                    // echo "Nombre:" . $row['nombres'] . "<br>";
+                    // echo "apellido:" . $row['apellidos'] . "<br>";
+                    // echo "edad:" . $row['edad'] . "<br>";
+                    // echo "sexo:" . $row['sexo'] . "<br>";
+                    // echo "correo:" . $row['correo'] . "<br>";
 
-                    //pendiente crear tabla en la nube>>>>>>>>>>>>>>>>>>>>>>>>>>>>><
-                    // array_push($data, $row);
+                    
+                    array_push($data, $row);
                 }
             }
         } else {
