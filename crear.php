@@ -76,7 +76,7 @@
 
         $conexion->close();
 
-        echo "<a href='48_alta_rubros.html' >Ingresar otro producto</a>"
+        echo "<a href='index.php' >Volver al index</a>"
 
         ?>
             <!-- Aquí el código HTML de la aplicación -->
