@@ -1,6 +1,7 @@
 -- vista mostrar usuarios
+drop view if exists vista_usuarios;
 create view vista_usuarios as
-   select cedula, nombres, apellidos, edad, sexo correo
+   select cedula, nombres, apellidos, edad, sexo, correo
 	from usuarios_ls;
     
 -- llamar vista
@@ -55,5 +56,5 @@ select * from vista_usuarios;
  
  select * from vista_usuarios;
  
-
+describe usuarios_ls;
  
