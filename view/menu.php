@@ -20,7 +20,7 @@
 					</div>
 				</div>
         <p>Ingrese en el formulario la edad del usuario y vera como le dice cuantos años tiene</p>
-        <a href="mayor.php">ir al formulario</a>
+        <a href="edad.php">ir al formulario</a>
       </div>
 
        <div class="col-md color col2"  style="background-color:#fff" >

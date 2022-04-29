@@ -1,7 +1,9 @@
 
       <?php include ('./view/header.php'); ?>
       <div class="row">
-      <div class="col-md-4"></div>
+      <div class="col-md-4">
+        
+      </div>
       <div class="col-md-4">
         <?php 
         for($i=0; $i<=100; $i++){
@@ -63,4 +65,4 @@
       <div class="col-md-4"></div>
       </div>
       
-      <?php include ('./view/footer.php'); ?>
+     

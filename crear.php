@@ -3,7 +3,7 @@
        <div class="row">
         <div class="col-md-8"></div>
         <div class="col-md-4">
-          <a class="btn btn-primary" href="#" role="button">Agregar Nuevo</a>';
+          <a class="btn btn-primary" href="insertar.php" role="button">Agregar Nuevo</a>';
         </div>
       </div>
 
