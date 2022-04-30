@@ -8,8 +8,8 @@
       </div>
 
       <div class="row">
-    <div class="col-md-2"></div>
-    <div class="col-md-8">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
 			<?php
         $conexion = new mysqli("db4free.net", "wilsonpru270921", "wili@159", "prueba270921");
         if ($conexion->connect_error)
@@ -81,7 +81,7 @@
         ?>
             <!-- Aquí el código HTML de la aplicación -->
           </div>               
-          <div class="col-md-2"></div>
+          <div class="col-md-1"></div>
           </div>
 
       <?php include ('./view/footer.php'); ?>
