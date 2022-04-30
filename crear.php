@@ -63,7 +63,7 @@
           echo '<td>';
           echo '<a class="btn btn-warning" href="#" role="button">Modificar</a>';
           echo '  ';
-          echo '<a class="btn btn-danger" href="#" role="button">Eliminar</a>';
+          echo '<a class="btn btn-danger" href="delete.php?cedula=$reg->cedula" role="button">Eliminar </a>';
           echo '</td>';
 
           echo '</tr>';
