@@ -1,6 +1,22 @@
 <?php include ('./view/header.php'); ?>
 
 
+<?php
+
+$cedula = $_GET['cedula'];
+$nombres = $_GET['nombres'];
+$apellidos = $_GET['apellidos'];
+$edad = $_GET['edad'];
+$sexo = $_GET['sexo'];
+$correo = $_GET['correo'];
+
+//echo "los datos son los siguientes cedula: $cedula nombres: $nombres apellidos: $apellidos edad: $edad sexo: $sexo correo: $correo";
+
+
+
+?>
+
+
   <div class="row">
   <div class="col-md-4"></div>
   <div class="col-md-4">
@@ -56,30 +72,28 @@
   <button type="submit" class="btn btn-primary">Submit</button>
   </form> -->
 
-  <form method="post" action="insertar2.php">
+  <form method="post" action="editar2.php">
       
         <label for="exampleInputEmail1" class="form-label">Cedula</label>
-        <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="cedula">
+        <input type="number" class="form-control" id="" aria-describedby="emailHelp" name="cedula" value="<?=$cedula?>">
       
         <label for="exampleInputEmail1" class="form-label">Nombres</label>
-        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="nombres">
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="nombres" value="<?=$nombres?>" >
 
         <label for="exampleInputEmail1" class="form-label">Apellidos</label>
-        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="apellidos">
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="apellidos" value="<?=$apellidos?>">
 
         <label for="exampleInputEmail1" class="form-label">Edad</label>
-        <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="edad">
+        <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="edad" value="<?=$edad?>">
 
         <label for="exampleInputEmail1" class="form-label">Genero</label>
-        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="genero">
-        
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="genero" value="<?=$sexo?>">
+
         <label for="exampleInputEmail1" class="form-label">Correo</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="correo">
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="correo" value="<?=$correo?>">
         <br>
         <button type="submit" class="btn btn-primary">enviar datos</button>
   </form>
      </div>
      <div class="col-md-3"></div> 
   </div>  
-
-  

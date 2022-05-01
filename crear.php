@@ -45,11 +45,18 @@
           <td><?php echo $reg['apellidos'] ?></td>
           <td><?php echo $reg['edad'] ?></td>
           <td><?php echo $reg['sexo'] ?></td>
-          <td><?php echo $reg['cedula'] ?></td>
+          <td><?php echo $reg['correo'] ?></td>
           <td>
-            <a class="btn btn-warning" href="#" role="button">Modificar</a>
+            <a class="btn btn-warning" href="editar.php?
+            +cedula=<?php echo $reg['cedula'] ?>&
+            nombres=<?php echo $reg['nombres'] ?>&
+            apellidos=<?php echo $reg['apellidos'] ?>&
+            edad=<?php echo $reg['edad'] ?>&
+            sexo=<?php echo $reg['sexo'] ?>&
+            correo=<?php echo $reg['correo'] ?>" role="button">Modificar</a>
             <a class="btn btn-danger" href="delete.php?cedula=<?php echo $reg['cedula']?>" role="button">Eliminar </a>
           </td>
+         
         
 
 
@@ -57,7 +64,7 @@
           <?php
         }
         $conexion->close();
-        echo "<a href='index.php' >Volver al index</a>"
+        // echo "<a href='index.php' >Volver al index</a>"
         ?>
 
 
@@ -66,4 +73,3 @@
           <div class="col-md-1"></div>
           </div>
 
-     

@@ -13,7 +13,7 @@
     $mysql->query("call pa_borrar_usuario($_REQUEST[cedula])") or
       die($mysql->error);
       echo '<div class="alert alert-primary" role="alert"> Registro borrado exitosamente en la DB</div> <br>';
-      echo "<a href='crear.php' >mostrar lista de articulos</a>";
+      echo "<a href='crear.php' >mostrar lista de usuarios</a>";
   } else
     echo 'No existe un artículo con dicho código';
 
