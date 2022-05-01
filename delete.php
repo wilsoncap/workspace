@@ -6,13 +6,14 @@
 
   $ide = $_GET['cedula'];
 
-  $registro = $mysql->query("select * from usuarios_ls where codigo=$_REQUEST[cedula]") or
+  $registro = $mysql->query("select * from usuarios_ls where cedula=$_REQUEST[cedula]") or
     die($mysql->error);
 
   if ($reg = $registro->fetch_array()) {
     $mysql->query("call pa_borrar_usuario($_REQUEST[cedula])") or
       die($mysql->error);
-      echo '<div class="alert alert-primary" role="alert"> Registro insertado correctamentamente en la DB</div> <br>';
+      echo '<div class="alert alert-primary" role="alert"> Registro borrado exitosamente en la DB</div> <br>';
+      echo "<a href='crear.php' >mostrar lista de articulos</a>";
   } else
     echo 'No existe un artículo con dicho código';
 

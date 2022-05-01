@@ -37,7 +37,7 @@
         $conexion->close();
 
         echo '<div class="alert alert-primary" role="alert"> Registro insertado correctamentamente en la DB</div> <br>';
-        echo "<a href='crear.php' >mostra articulos ingresados</a>"
+        echo "<a href='crear.php' >mostrar lista de articulos</a>"
       ?>
 
 
