@@ -20,7 +20,7 @@
 					</div>
 				</div>
         <p>Ingrese en el formulario la edad del usuario y vera como le dice cuantos años tiene</p>
-        <a href="edad.php">ir al formulario</a>
+        <a href="edad.php">ir al ejercicio</a>
       </div>
 
        <div class="col-md color col2"  style="background-color:#fff" >
@@ -31,7 +31,7 @@
 					</div>
 				</div>
         <p>Ingrese en el formualario dos numeros y determine cual es el mayor de los dos.</p>
-        <a href="mayor.php">ir al formulario</a>
+        <a href="mayor.php">ir al ejercicio</a>
       </div>
 
        <div class="col-md color"  style="background-color:#fff" >
@@ -57,7 +57,7 @@
 					</div>
 				</div>
         <p>Valide la informacion a travez de ciclos como el for, el while y </p>
-        <a href="mayor.php">ir al formulario</a>
+        <a href="#">ir al ejercicio</a>
       </div>
 
        <div class="col-md color col2"  style="background-color:#fff" >
@@ -68,7 +68,7 @@
 					</div>
 				</div>
         <p>Ingrese en el formualario dos numeros y determine cual es el mayor de los dos.</p>
-        <a href="parcial.php">ir al formulario</a>
+        <a href="parcial.php">ir al ejercicio</a>
       </div>
 
        <div class="col-md color"  style="background-color:#fff" >
@@ -79,6 +79,6 @@
 					</div>
 				</div>
         <p>Ingrese en el formualario dos numeros y determine cual es el mayor de los dos.</p>
-        <a href="mayor.php">ir al formulario</a>
+        <a href="mayor.php">ir al ejercicio</a>
       </div>
 </div>
