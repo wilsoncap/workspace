@@ -79,6 +79,6 @@
 					</div>
 				</div>
         <p>Ingrese en el formualario dos numeros y determine cual es el mayor de los dos.</p>
-        <a href="mayor.php">ir al ejercicio</a>
+        <a href="api_json.html">ir al ejercicio</a>
       </div>
 </div>
