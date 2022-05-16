@@ -80,10 +80,10 @@
         <div class="Panel Content" class="col-lg col2">
 					<div class="panel-heading alert alert-warning">
 					  <i class="bi bi-binoculars-fill"></i>
-					  <span style="color:orange;"><b>&nbsp;&nbsp;EJERCICIO 6</b></span>
+					  <span style="color:orange;"><b>&nbsp;&nbsp;crear y consumir api</b></span>
 					</div>
 				</div>
-        <p>Ingrese en el formualario dos numeros y determine cual es el mayor de los dos.</p>
+        <p>En esta seccion crearemos una api con la DB y la consumiremos</p>
         <a href="api_json.html">ir al ejercicio</a>
       </div>
 </div>
