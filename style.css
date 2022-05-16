@@ -14,3 +14,24 @@
 .header {
   border: 1px solid orangered;
 }
+
+#datos {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.tarjeta {
+  width: 400px;
+  margin: 20px;
+  border: 1px solid gray;
+  box-shadow: 0 0 10px black;
+  border-radius: 10px;
+  background-color: lightgray;
+}
+
+.tarjeta p {
+  margin: 10px;
+  font-family: cursive;
+  font-size: 1.2rem;
+}

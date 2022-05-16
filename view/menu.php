@@ -58,6 +58,7 @@
 				</div>
         <p>Valide la informacion a travez de ciclos como el for, el while y </p>
         <a href="api_recuperar_archivos.html">recuperar archivos</a>
+        <br>
         <a href="api_recuperar_imagenes.html">recuperar imagenes</a>
       </div>
 

@@ -4,14 +4,26 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
     <title>Api Json</title>
   </head>
   <body>
     <h1>Api Json</h1>
+    <div class="container">
+      <div id="datos"></div>
+    </div>
+
     <script>
       fetch("datos.php")
         .then((response) => response.json())
-        .then((datos) => console.log(datos));
+        //.then((datos) => console.log(datos));
+        .then((datos) => {
+          let cadena = "";
+          for (let reg of datos)
+            cadena += `<div class="tarjeta"><p>${reg.cedula}</p>
+                        <br><p>${reg.nombres}</p><br><p>${reg.apellidos}</p></div>`;
+          document.querySelector("#datos").innerHTML = cadena;
+        });
     </script>
   </body>
 </html>
