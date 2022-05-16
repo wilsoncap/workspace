@@ -80,7 +80,7 @@
         <div class="Panel Content" class="col-lg col2">
 					<div class="panel-heading alert alert-warning">
 					  <i class="bi bi-binoculars-fill"></i>
-					  <span style="color:orange;"><b>&nbsp;&nbsp;crear y consumir api</b></span>
+					  <span style="color:orange;"><b>&nbsp;&nbsp;CREAR Y CONSUMIR API</b></span>
 					</div>
 				</div>
         <p>En esta seccion crearemos una api con la DB y la consumiremos</p>
