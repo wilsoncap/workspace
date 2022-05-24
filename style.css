@@ -21,6 +21,7 @@
   margin: 0 auto;
   max-width: 1200px;
   display: flex;
+  justify-content: start;
   flex-wrap: wrap;
   gap: 2em;
 }
@@ -28,8 +29,9 @@
 .tarjeta {
   color: white;
   min-width: 80px;
+  max-width: 400px;
   flex: 350px;
-  margin: 20px;
+  margin: 10px;
   border: 1px solid gray;
   box-shadow: 0 0 10px black;
   border-radius: 10px;
