@@ -16,20 +16,24 @@
 }
 
 #datos {
+  width: 90%;
+  padding: 80px 0;
+  margin: 0 auto;
+  max-width: 1200px;
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  flex-wrap: wrap;
+  gap: 2em;
 }
 
 .tarjeta {
   color: white;
-  width: 400px;
+  min-width: 80px;
+  flex: 350px;
   margin: 20px;
   border: 1px solid gray;
   box-shadow: 0 0 10px black;
   border-radius: 10px;
   background-color: rgb(5, 13, 33);
-  #050D22
 }
 
 .centrado {
@@ -38,8 +42,8 @@
 }
 
 .tarjeta img {
-  width: 200px;
-  height: 200px;
+  width: 300px;
+  height: 300px;
   border-radius: 50%;
 }
 
