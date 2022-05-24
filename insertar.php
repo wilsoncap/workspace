@@ -75,6 +75,9 @@
         
         <label for="exampleInputEmail1" class="form-label">Correo</label>
         <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="correo">
+
+        <label for="exampleInputEmail1" class="form-label">url imagen</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="url_img">
         <br>
         <button type="submit" class="btn btn-primary">enviar datos</button>
   </form>

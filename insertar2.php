@@ -18,6 +18,7 @@
             }
 
           $b_correo = $_REQUEST['correo'];
+          $b_urlimge = $_REQUEST['url_img'];
           
 
         //call pa_insertar_usuario(152436, 'HECTOR MANUEL','PEREZ LUNA',25, 'MASCULINO', 'HECTOR@GMAIL.COM')
@@ -25,7 +26,7 @@
         // $conexion->query("CALL pa_insertar_usuario($b_cedula, $b_nombres, $b_apellidos, $b_edad, $b_sexo, $b_correo)") or
         // die($conexion->error);
 
-        $conexion->query("CALL pa_insertar_usuario('$_REQUEST[cedula]', '$_REQUEST[nombres]','$_REQUEST[apellidos]','$_REQUEST[edad]', '$_REQUEST[genero]', '$_REQUEST[correo]')") or
+        $conexion->query("CALL pa_insertar_usuario('$_REQUEST[cedula]', '$_REQUEST[nombres]','$_REQUEST[apellidos]','$_REQUEST[edad]', '$_REQUEST[genero]', '$_REQUEST[correo]', '$_REQUEST[url_img]')") or
           die($conexion->error);
 
         // $rubro = new rubros('.$_REQUEST[descripcion].');

@@ -22,12 +22,25 @@
 }
 
 .tarjeta {
+  color: white;
   width: 400px;
   margin: 20px;
   border: 1px solid gray;
   box-shadow: 0 0 10px black;
   border-radius: 10px;
-  background-color: lightgray;
+  background-color: rgb(5, 13, 33);
+  #050D22
+}
+
+.centrado {
+  margin: 10px auto;
+  display: block;
+}
+
+.tarjeta img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
 }
 
 .tarjeta p {

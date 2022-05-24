@@ -7,7 +7,7 @@
           die('Problemas con la conexion a la base de datos');
 
 
-        $conexion->query("CALL pa_update_usuario('$_REQUEST[cedula]', '$_REQUEST[nombres]','$_REQUEST[apellidos]','$_REQUEST[edad]', '$_REQUEST[genero]', '$_REQUEST[correo]')") or
+        $conexion->query("CALL pa_actualizar_usuario('$_REQUEST[cedula]', '$_REQUEST[nombres]','$_REQUEST[apellidos]','$_REQUEST[edad]', '$_REQUEST[genero]', '$_REQUEST[correo]', '$_REQUEST[url_img]')") or
           die($conexion->error);
 
         $conexion->close();

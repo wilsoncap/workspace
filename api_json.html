@@ -22,6 +22,7 @@
           let cadena = "";
           for (let reg of datos)
             cadena += `<div class="tarjeta"><p>${reg.cedula}</p>
+                        <img class="centrado" src="${reg.url_img}">
                         <br><p>${reg.nombres}</p><br><p>${reg.apellidos}</p></div>`;
           document.querySelector("#datos").innerHTML = cadena;
         });

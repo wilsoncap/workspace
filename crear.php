@@ -19,6 +19,7 @@
                 <th scope="col">Edad</th>
                 <th scope="col">Sexo</th>
                 <th scope="col">Correo</th>
+                <th scope="col">Url_img</th>
                 <th scope="col">Accion</th>
               </tr>
             </thead>
@@ -46,6 +47,7 @@
           <td><?php echo $reg['edad'] ?></td>
           <td><?php echo $reg['sexo'] ?></td>
           <td><?php echo $reg['correo'] ?></td>
+          <td><?php echo $reg['url_img'] ?></td>
           <td>
             <a class="btn btn-warning" href="editar.php?
             +cedula=<?php echo $reg['cedula'] ?>&
