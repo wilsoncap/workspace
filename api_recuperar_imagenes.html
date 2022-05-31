@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recuperar imagenes</title>
+</head>
+<body>
+  <div>
+        <button id="boton1">barniz-interior</button>
+        <button id="boton2">pegastosil</button>
+        <button id="boton3">anticorrosivo</button>
+    </div>
+    <img id="foto" style="width: 250px; height:250px">
+
+    </div>
+    <script>
+        document.getElementById("boton1").addEventListener("click", () => mostrar('Barniz-interior.jpg'));
+        document.getElementById("boton2").addEventListener("click", () => mostrar('pegastosil.jpg'));
+        document.getElementById("boton3").addEventListener("click", () => mostrar('esmalte-anticorrosivo.jpg'));
+
+
+        function mostrar(signo) {
+            fetch(signo)
+                .then(response => response.blob())
+                .then(datos => document.getElementById("foto").setAttribute('src', URL.createObjectURL(datos)));
+        }
+
+    </script>
+</body>
+</html>

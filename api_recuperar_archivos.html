@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>recuperar archivos</title>
+  </head>
+  <body>
+    <h1>ES6 Recuperar archivos de texto</h1>
+    <div>
+      <button id="boton1">Aries</button>
+      <button id="boton2">Tauro</button>
+      <button id="boton3">Geminis</button>
+    </div>
+    <div id="contenido"></div>
+
+    <script>
+      document
+        .getElementById("boton1")
+        .addEventListener("click", () => mostrar("aries.txt"));
+      document
+        .getElementById("boton2")
+        .addEventListener("click", () => mostrar("tauro.txt"));
+      document
+        .getElementById("boton3")
+        .addEventListener("click", () => mostrar("geminis.txt"));
+
+      function mostrar(signo) {
+        fetch(signo)
+          .then((response) => response.text())
+          .then(
+            (datos) => (document.getElementById("contenido").innerText = datos)
+          );
+      }
+    </script>
+  </body>
+</html>
