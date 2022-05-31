@@ -2,27 +2,35 @@
 
 $usuario = $_POST['usuario'];
 $contraseña = $_POST['contraseña'];
-session_start();
-$_SESSION['usuario']=$usuario;
+
 
 
 include('db.php');
 
-$consulta = "SELECT*FROM usuarios WHERE nombre_usuario='$usuario' AND clave='$contraseña' ";
-$resultado = mysqli_query($conexion, $consulta);
+if(isset($_POST['btnlogin']))
+{
+  $queryusuario = mysqli_query($conexion, "SELECT * FROM usuariologin WHERE nombre_usuario='$usuario'");
+  $nrow = mysqli_num_rows($queryusuario);
+  $row_usuario = mysqli_fetch_assoc($queryusuario);
+  $buscarpash = mysqli_fetch_array($queryusuario);
 
-$filas = mysqli_num_rows($resultado);
-if($filas){
-  header("Location: http://localhost:8080/workspace/home.php");
-}
-else{
-  ?>
-  <?php
-    include('index.php')
-  ?>
-  <h1 class="">Error en la Autenticacion</h1>
-  <?php
 
+  $usu = $row_usuario['clave_usuario'];
+  ;
+  if(($nrow == 1) && (md5($contraseña) === $usu))
+  {
+      //echo "hola $usuario y contraseña $usu --------";
+      echo "<script>alert('Bienvenido(a) al sistema: $usuario'); window.location='home.php'</script>";
+    }else
+    {
+      //echo "hola $usuario y contraseña $usu **********";
+      echo "<script>alert('$nombre Usuario no existe en el sistema '); window.location='index.php'</script>";
+    //echo "usuario no exixte en el sistema";
+  }
 }
-mysqli_free_result($resultado);
-mysqli_close($conexion);
+
+
+
+
+
+?>

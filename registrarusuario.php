@@ -26,10 +26,6 @@
         padding: 20px;
         width: 300px;
       }
-      .titulo{
-        font-size: 20px;
-
-      }
     </style>
     <title>Document</title>
   </head>
@@ -50,8 +46,8 @@
                 style="background-color: #aaa"
               ></div>
               <div class="col align-self-center">
-                <p class="titulo">LOGEARSE AL SISTEMA</p>
-                <form class="formulario" action="validar.php" method="post">
+                <p class="titulo">CREAR NUEVO USUARIO</p>
+                <form class="formulario" action="insertarusuario.php" method="post">
                   <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label"
                       >Usuario</label
@@ -76,12 +72,10 @@
                     />
                   </div>
 
-                  <button type="submit" class="btn btn-primary" name="btnlogin">
+                  <button type="submit" class="btn btn-primary" name="btnregistrar">
                     Ingresar
                   </button>
                 </form>
-                <br>
-                <a href="registrarusuario.php">crear un nuevo usuario</a>
               </div>
               <div class="col align-self-end" style="background-color: #ccc">
                 <!-- <h1>Columna 3</h1> -->
