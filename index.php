@@ -3,17 +3,17 @@ require_once './clases/conexion/conexion.php';
 
 $conexion = new conexion();
 $direcctorio = dirname(__FILE__);
-echo "Conecction success..... $direcctorio";
+//echo "Conecction success..... $direcctorio";
 //$jsonprueba = file_get_contents($direcctorio . "/clases/conexion/"."config");
 //echo $jsonprueba;
 
 // $query = 'select * from pacientes';
 // print_r($conexion->obtenerDatos($query));
 
-$query = 'INSERT INTO pacientes(DNI) VALUES(9)';
-print_r($conexion->nomQueryId($query));
+//$query = 'INSERT INTO pacientes(DNI) VALUES(9)';
+//print_r($conexion->nomQueryId($query));
 ?>
-<!-- 
+ 
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -110,4 +110,4 @@ print_r($conexion->nomQueryId($query));
 
     <!--Hacer ejercicio 37....Si seguro que es una buena practica-->
   </body>
-</html> -->
+</html>
