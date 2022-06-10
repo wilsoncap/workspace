@@ -1,4 +1,21 @@
-<!DOCTYPE html>
+<?php
+require_once './clases/conexion/conexion.php';
+
+$conexion = new conexion();
+$direcctorio = dirname(__FILE__);
+//echo "Conecction success..... $direcctorio";
+//$jsonprueba = file_get_contents($direcctorio . "/clases/conexion/"."config");
+//echo $jsonprueba;
+
+// $query = 'select * from pacientes';
+// print_r($conexion->obtenerDatos($query));
+
+//$query = 'INSERT INTO pacientes(DNI) VALUES(9)';
+//print_r($conexion->nomQueryId($query));
+echo "hola index";
+?>
+ 
+<!-- <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -94,4 +111,4 @@
 
     <!--Hacer ejercicio 37....Si seguro que es una buena practica-->
   </body>
-</html>
+</html> -->
