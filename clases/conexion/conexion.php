@@ -69,6 +69,10 @@ public function nomQueryId($slqstr){
   }
 }
 
+protected function encriptar($string){
+  return md5($string);
+}
+
 
 }
 
