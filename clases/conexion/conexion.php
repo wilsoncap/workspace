@@ -46,6 +46,7 @@ class conexion{
 public function obtenerDatos($sqlstr){
   $results = $this->conexion->query($sqlstr);
   $resultArray = array();
+  // cada fila me la vas a nombrar como un key y el resultarray me lo vas a llenar con cada key
   foreach($results as $key){
     $resultArray[] = $key;
   }
