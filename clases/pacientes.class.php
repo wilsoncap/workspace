@@ -39,15 +39,10 @@ class pacientes extends conexion {
 
     public function post($json){
         $_respuestas = new respuestas;
+        //convertir json en array asociativo
         $datos = json_decode($json,true);
-
-        if(!isset($datos['token'])){
-                return $_respuestas->error_401();
-        }else{
-            $this->token = $datos['token'];
-            $arrayToken =   $this->buscarToken();
-            if($arrayToken){
-
+       
+                // si en el array datos no tiene algundato con nombre, dni o correo
                 if(!isset($datos['nombre']) || !isset($datos['dni']) || !isset($datos['correo'])){
                     return $_respuestas->error_400();
                 }else{
@@ -71,10 +66,40 @@ class pacientes extends conexion {
                     }
                 }
 
-            }else{
-                return $_respuestas->error_401("El Token que envio es invalido o ha caducado");
-            }
-        }
+        // if(!isset($datos['token'])){
+        //         return $_respuestas->error_401();
+        // }else{
+        //     $this->token = $datos['token'];
+        //     $arrayToken =   $this->buscarToken();
+        //     if($arrayToken){
+        //         // si en el array datos existe algun valor con nombre, dni o correo
+        //         if(!isset($datos['nombre']) || !isset($datos['dni']) || !isset($datos['correo'])){
+        //             return $_respuestas->error_400();
+        //         }else{
+        //             $this->nombre = $datos['nombre'];
+        //             $this->dni = $datos['dni'];
+        //             $this->correo = $datos['correo'];
+        //             if(isset($datos['telefono'])) { $this->telefono = $datos['telefono']; }
+        //             if(isset($datos['direccion'])) { $this->direccion = $datos['direccion']; }
+        //             if(isset($datos['codigoPostal'])) { $this->codigoPostal = $datos['codigoPostal']; }
+        //             if(isset($datos['genero'])) { $this->genero = $datos['genero']; }
+        //             if(isset($datos['fechaNacimiento'])) { $this->fechaNacimiento = $datos['fechaNacimiento']; }
+        //             $resp = $this->insertarPaciente();
+        //             if($resp){
+        //                 $respuesta = $_respuestas->response;
+        //                 $respuesta["result"] = array(
+        //                     "pacienteId" => $resp
+        //                 );
+        //                 return $respuesta;
+        //             }else{
+        //                 return $_respuestas->error_500();
+        //             }
+        //         }
+
+        //     }else{
+        //         return $_respuestas->error_401("El Token que envio es invalido o ha caducado");
+        //     }
+        // }
 
 
        

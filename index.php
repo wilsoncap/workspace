@@ -12,10 +12,10 @@ $direcctorio = dirname(__FILE__);
 
 //$query = 'INSERT INTO pacientes(DNI) VALUES(9)';
 //print_r($conexion->nomQueryId($query));
-echo "hola index";
+// echo "hola index";
 ?>
  
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -111,4 +111,4 @@ echo "hola index";
 
     <!--Hacer ejercicio 37....Si seguro que es una buena practica-->
   </body>
-</html> -->
+</html>
