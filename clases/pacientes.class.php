@@ -123,16 +123,10 @@ class pacientes extends conexion {
         $_respuestas = new respuestas;
         $datos = json_decode($json,true);
 
-        if(!isset($datos['token'])){
-            return $_respuestas->error_401();
-        }else{
-            $this->token = $datos['token'];
-            $arrayToken =   $this->buscarToken();
-            if($arrayToken){
-                if(!isset($datos['pacienteId'])){
+        if(!isset($datos['PacienteId'])){
                     return $_respuestas->error_400();
                 }else{
-                    $this->pacienteid = $datos['pacienteId'];
+                    $this->pacienteid = $datos['PacienteId'];
                     if(isset($datos['nombre'])) { $this->nombre = $datos['nombre']; }
                     if(isset($datos['dni'])) { $this->dni = $datos['dni']; }
                     if(isset($datos['correo'])) { $this->correo = $datos['correo']; }
@@ -154,10 +148,41 @@ class pacientes extends conexion {
                     }
                 }
 
-            }else{
-                return $_respuestas->error_401("El Token que envio es invalido o ha caducado");
-            }
-        }
+        // if(!isset($datos['token'])){
+        //     return $_respuestas->error_401();
+        // }else{
+        //     $this->token = $datos['token'];
+        //     $arrayToken =   $this->buscarToken();
+        //     if($arrayToken){
+        //         if(!isset($datos['pacienteId'])){
+        //             return $_respuestas->error_400();
+        //         }else{
+        //             $this->pacienteid = $datos['pacienteId'];
+        //             if(isset($datos['nombre'])) { $this->nombre = $datos['nombre']; }
+        //             if(isset($datos['dni'])) { $this->dni = $datos['dni']; }
+        //             if(isset($datos['correo'])) { $this->correo = $datos['correo']; }
+        //             if(isset($datos['telefono'])) { $this->telefono = $datos['telefono']; }
+        //             if(isset($datos['direccion'])) { $this->direccion = $datos['direccion']; }
+        //             if(isset($datos['codigoPostal'])) { $this->codigoPostal = $datos['codigoPostal']; }
+        //             if(isset($datos['genero'])) { $this->genero = $datos['genero']; }
+        //             if(isset($datos['fechaNacimiento'])) { $this->fechaNacimiento = $datos['fechaNacimiento']; }
+        
+        //             $resp = $this->modificarPaciente();
+        //             if($resp){
+        //                 $respuesta = $_respuestas->response;
+        //                 $respuesta["result"] = array(
+        //                     "pacienteId" => $this->pacienteid
+        //                 );
+        //                 return $respuesta;
+        //             }else{
+        //                 return $_respuestas->error_500();
+        //             }
+        //         }
+
+        //     }else{
+        //         return $_respuestas->error_401("El Token que envio es invalido o ha caducado");
+        //     }
+        // }
 
 
     }
