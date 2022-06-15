@@ -187,6 +187,7 @@ class pacientes extends conexion {
 
     }
 
+    // los metodos que van a ejecutar la sentencia SQL los define privados
 
     private function modificarPaciente(){
         $query = "UPDATE " . $this->table . " SET Nombre ='" . $this->nombre . "',Direccion = '" . $this->direccion . "', DNI = '" . $this->dni . "', CodigoPostal = '" .
@@ -202,17 +203,12 @@ class pacientes extends conexion {
 
 
     public function delete($json){
+        //en cada metodo estoy instanciado la clase respuesta
         $_respuestas = new respuestas;
+        // los datos que me llegan como parametro json los convierto en un array
         $datos = json_decode($json,true);
 
-        if(!isset($datos['token'])){
-            return $_respuestas->error_401();
-        }else{
-            $this->token = $datos['token'];
-            $arrayToken =   $this->buscarToken();
-            if($arrayToken){
-
-                if(!isset($datos['pacienteId'])){
+        if(!isset($datos['pacienteId'])){
                     return $_respuestas->error_400();
                 }else{
                     $this->pacienteid = $datos['pacienteId'];
@@ -228,10 +224,34 @@ class pacientes extends conexion {
                     }
                 }
 
-            }else{
-                return $_respuestas->error_401("El Token que envio es invalido o ha caducado");
-            }
-        }
+
+        // if(!isset($datos['token'])){
+        //     return $_respuestas->error_401();
+        // }else{
+        //     $this->token = $datos['token'];
+        //     $arrayToken =   $this->buscarToken();
+        //     if($arrayToken){
+
+        //         if(!isset($datos['pacienteId'])){
+        //             return $_respuestas->error_400();
+        //         }else{
+        //             $this->pacienteid = $datos['pacienteId'];
+        //             $resp = $this->eliminarPaciente();
+        //             if($resp){
+        //                 $respuesta = $_respuestas->response;
+        //                 $respuesta["result"] = array(
+        //                     "pacienteId" => $this->pacienteid
+        //                 );
+        //                 return $respuesta;
+        //             }else{
+        //                 return $_respuestas->error_500();
+        //             }
+        //         }
+
+        //     }else{
+        //         return $_respuestas->error_401("El Token que envio es invalido o ha caducado");
+        //     }
+        // }
 
 
 
