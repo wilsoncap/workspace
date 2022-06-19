@@ -66,73 +66,73 @@ class MySQLDB
         return $data;
     }
 
-    // function numRows($sql)
-    // {
-    //     $result = mysqli_query($this->connection, $sql);
-    //     $error = mysqli_error($this->connection);
+    function numRows($sql)
+    {
+        $result = mysqli_query($this->connection, $sql);
+        $error = mysqli_error($this->connection);
 
-    //     if (empty($error)) {
-    //         return mysqli_num_rows($result);
-    //     } else {
-    //         throw new Exception($error);
-    //     }
-    // }
+        if (empty($error)) {
+            return mysqli_num_rows($result);
+        } else {
+            throw new Exception($error);
+        }
+    }
 
-    // function getDataSingle($sql)
-    // {
+    function getDataSingle($sql)
+    {
 
-    //     $result = mysqli_query($this->connection, $sql);
+        $result = mysqli_query($this->connection, $sql);
 
-    //     $error = mysqli_error($this->connection);
+        $error = mysqli_error($this->connection);
 
-    //     if (empty($error)) {
-    //         if (mysqli_num_rows($result) > 0) {
-    //             return mysqli_fetch_assoc($result);
-    //         }
-    //     } else {
-    //         throw new Exception($error);
-    //     }
-    //     return null;
-    // }
+        if (empty($error)) {
+            if (mysqli_num_rows($result) > 0) {
+                return mysqli_fetch_assoc($result);
+            }
+        } else {
+            throw new Exception($error);
+        }
+        return null;
+    }
 
-    // function getDataSingleProp($sql, $prop)
-    // {
+    function getDataSingleProp($sql, $prop)
+    {
 
-    //     $result = mysqli_query($this->connection, $sql);
+        $result = mysqli_query($this->connection, $sql);
 
-    //     $error = mysqli_error($this->connection);
+        $error = mysqli_error($this->connection);
 
-    //     if (empty($error)) {
-    //         if (mysqli_num_rows($result) > 0) {
-    //             $data = mysqli_fetch_assoc($result);
-    //             return $data[$prop];
-    //         }
-    //     } else {
-    //         throw new Exception($error);
-    //     }
-    //     return null;
-    // }
+        if (empty($error)) {
+            if (mysqli_num_rows($result) > 0) {
+                $data = mysqli_fetch_assoc($result);
+                return $data[$prop];
+            }
+        } else {
+            throw new Exception($error);
+        }
+        return null;
+    }
 
-    // function executeInstruction($sql)
-    // {
-    //     $success = mysqli_query($this->connection, $sql);
+    function executeInstruction($sql)
+    {
+        $success = mysqli_query($this->connection, $sql);
 
-    //     $error = mysqli_error($this->connection);
+        $error = mysqli_error($this->connection);
 
-    //     if (empty($error)) {
-    //         return $success;
-    //     } else {
-    //         throw new Exception($error);
-    //     }
-    // }
+        if (empty($error)) {
+            return $success;
+        } else {
+            throw new Exception($error);
+        }
+    }
 
-    // function close()
-    // {
-    //     mysqli_close($this->connection);
-    // }
+    function close()
+    {
+        mysqli_close($this->connection);
+    }
 
-    // function getLastId()
-    // {
-    //     return mysqli_insert_id($this->connection);
-    // }
+    function getLastId()
+    {
+        return mysqli_insert_id($this->connection);
+    }
 }
