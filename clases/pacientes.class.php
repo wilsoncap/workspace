@@ -64,7 +64,11 @@ class pacientes extends conexion {
                     if(isset($datos['direccion'])) { $this->direccion = $datos['direccion']; }
                     if(isset($datos['codigoPostal'])) { $this->codigoPostal = $datos['codigoPostal']; }
                     if(isset($datos['genero'])) { $this->genero = $datos['genero']; }
-                    if(isset($datos['fechaNacimiento'])) { $this->fechaNacimiento = $datos['fechaNacimiento']; }
+                    if(isset($datos['fechaNacimiento'])) { 
+                        $this->fechaNacimiento = $datos['fechaNacimiento']; 
+                    }else{
+                        $this->fechaNacimiento = '1980-01-01';
+                    }
                     $resp = $this->insertarPaciente();
                     if($resp){
                         //return $datos;
@@ -73,10 +77,12 @@ class pacientes extends conexion {
                             "pacienteId" => $resp
                         );
                         return $respuesta;
-                    }else{
-                        //return $_respuestas->error_500();
+                        //return 1;
                         // return $resp;
-                        return "ningun dato en la consulta retorno el metodo insertarpaciente";
+                    }else{
+                        return $_respuestas->error_500();
+                        //return "ningun dato en la consulta retorno el metodo insertarpaciente";
+                        //return $resp;
                     }
                 }
 
@@ -92,14 +98,13 @@ class pacientes extends conexion {
 
 
     private function insertarPaciente(){
-        $query = "INSERT INTO " . $this->table . " (DNI,Nombre,Direccion,CodigoPostal,Telefono,Genero,FechaNacimiento,Correo)
-        values
-        ('" . $this->dni . "','" . $this->nombre . "','" . $this->direccion ."','" . $this->codigoPostal . "','"  . $this->telefono . "','" . $this->genero . "','" . $this->fechaNacimiento . "','" . $this->correo . "')"; 
+        $query = "INSERT INTO " . $this->table . "(DNI,Nombre,Direccion,CodigoPostal,Telefono,Genero,FechaNacimiento,Correo) VALUES ('" . $this->dni . "','" . $this->nombre . "','" . $this->direccion ."','" . $this->codigoPostal . "','"  . $this->telefono . "','" . $this->genero . "','" . $this->fechaNacimiento . "','" . $this->correo . "')"; 
         $resp = parent::nomQueryId($query);
         if($resp){
              return $resp;
         }else{
             return 0;
+            //return $query;
         }
     }
     
