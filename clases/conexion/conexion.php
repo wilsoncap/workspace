@@ -25,6 +25,7 @@ class conexion{
     }  
   }
 
+
   private function datosConexion(){
     $direccion = dirname(__FILE__);
     $jsondata = file_get_contents($direccion . "/"."config");
@@ -55,7 +56,11 @@ public function obtenerDatos($sqlstr){
 
 public function nomQuery($slqstr){
   $results = $this->conexion->query($slqstr);
-  return $this->conexion->affected_rows;
+  if($results){
+    return $this->conexion->affected_rows;
+  }else{
+    return $this->conexion->connect_error;
+  }
 }
 
 
@@ -66,7 +71,7 @@ public function nomQueryId($slqstr){
   if($filas >= 1){
     return $this->conexion->insert_id;
   } else{
-    return 0;
+    return 1525;
   }
 }
 
