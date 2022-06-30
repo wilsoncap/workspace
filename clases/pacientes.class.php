@@ -66,17 +66,17 @@ class pacientes extends conexion {
                     if(isset($datos['genero'])) { $this->genero = $datos['genero']; }
                     if(isset($datos['fechaNacimiento'])) { $this->fechaNacimiento = $datos['fechaNacimiento']; }
                     $resp = $this->insertarPaciente();
-                    // if($resp){
-                    //     $respuesta = $_respuestas->response;
-                    //     $respuesta["result"] = array(
-                    //         "pacienteId" => $resp
-                    //     );
-                    //     return $respuesta;
-                    // }else{
-                    //     //return $_respuestas->error_500();
-                    //     return $resp;
-                    // }
-                    return $resp;
+                    if($resp){
+                        $respuesta = $_respuestas->response;
+                        $respuesta["result"] = array(
+                            "pacienteId" => $resp
+                        );
+                        return $respuesta;
+                    }else{
+                        return $_respuestas->error_500();
+                        //return $resp;
+                    }
+                    // return $resp;
 
                 }
 
@@ -91,13 +91,28 @@ class pacientes extends conexion {
     }
 
 
-    private function insertarPaciente(){
-        $query = "INSERT INTO " . $this->table . " (DNI,Nombre,Direccion,CodigoPostal,Telefono,Genero,FechaNacimiento,Correo) values('" . $this->dni . "','" . $this->nombre . "','" . $this->direccion ."','" . $this->codigoPostal . "','"  . $this->telefono . "','" . $this->genero . "','" . $this->fechaNacimiento . "','" . $this->correo . "');";
-        $resp = parent::nomQueryId($query);
-        if($resp != 1525){
-             return $resp;
-        }else{
-            return "Error: $resp";
+    private function insertarPaciente()
+    {
+        try {
+
+            $mes = substr($this->fechaNacimiento, 0, 2);
+            $dia = substr($this->fechaNacimiento, 3, 2);
+            $year = substr($this->fechaNacimiento, 6, 4);
+            
+            $conversion_fecha_timestamp = mktime(0, 0, 0, $mes, $dia, $year);
+            
+             $query = "INSERT INTO " . $this->table . " (DNI,Nombre,Direccion,CodigoPostal,Telefono,Genero,FechaNacimiento,Correo) values('" . $this->dni . "','" . $this->nombre . "','" . $this->direccion ."','" . $this->codigoPostal . "','"  . $this->telefono . "','" . $this->genero . "','" .  $conversion_fecha_timestamp . "','" . $this->correo . "');";
+
+            $resp = parent::nomQueryId($query);
+            if($resp ){
+                return $resp;
+            }else{
+                return $query;
+            }
+
+        } catch (Exception $e) 
+        {
+            return $e->getMessage();
         }
     }
     

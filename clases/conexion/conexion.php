@@ -65,13 +65,33 @@ public function nomQuery($slqstr){
 
 
 // INSERT ID
-public function nomQueryId($slqstr){
-  $results = $this->conexion->query($slqstr);
-  $filas = $this->conexion->affected_rows;
-  if($filas >= 1){
-    return $this->conexion->insert_id;
-  } else{
-    return 1525;
+public function nomQueryId($slqstr)
+{
+  try {
+
+    /*
+    Convertir fecha en formato timestamp en formatdo date
+    DATE_FORMAT(FROM_UNIXTIME(`$fechaNacimiento`), '%e-%b-%Y') AS 'fecha_nacimiento'
+    */
+
+    $results = $this->conexion->query($slqstr);
+      
+    if($results)
+    {
+      $filas = $this->conexion->affected_rows;
+    } else {
+      die("Ha ocurrido un error: " . mysqli_error($this->conexion));
+    }
+
+    if($filas >= 1){
+      return $this->conexion->insert_id;
+    } else{
+      return 0;
+    }
+
+  } catch (Exception $e) 
+  {
+    return "Ha ocurrido un error: " . $e->getMessage();
   }
 }
 
