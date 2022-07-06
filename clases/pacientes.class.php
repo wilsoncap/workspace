@@ -95,11 +95,11 @@ class pacientes extends conexion {
     {
         try {
 
-            $mes = substr($this->fechaNacimiento, 0, 2);
-            $dia = substr($this->fechaNacimiento, 3, 2);
-            $year = substr($this->fechaNacimiento, 6, 4);
-            
-            $conversion_fecha_timestamp = mktime(0, 0, 0, $mes, $dia, $year);
+            // $mes = substr($this->fechaNacimiento, 0, 2);
+            // $dia = substr($this->fechaNacimiento, 3, 2);
+            // $year = substr($this->fechaNacimiento, 6, 4);
+             $conversion_fecha_timestamp = parent::conversionFecha($this->fechaNacimiento);
+
             
              $query = "INSERT INTO " . $this->table . " (DNI,Nombre,Direccion,CodigoPostal,Telefono,Genero,FechaNacimiento,Correo) values('" . $this->dni . "','" . $this->nombre . "','" . $this->direccion ."','" . $this->codigoPostal . "','"  . $this->telefono . "','" . $this->genero . "','" .  $conversion_fecha_timestamp . "','" . $this->correo . "');";
 
@@ -250,6 +250,9 @@ class pacientes extends conexion {
             return 0;
         }
     }
+
+
+ 
 
 
 
