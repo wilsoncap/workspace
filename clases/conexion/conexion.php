@@ -99,8 +99,29 @@ protected function encriptar($string){
   return md5($string);
 }
 
+   public function conversionFecha($fecha){
+        try {
+          if ($fecha != 0) {
+            $mes = substr($fecha, 0, 2);
+            $dia = substr($fecha, 3, 2);
+            $year = substr($fecha, 6, 4);
+            $conversion_fecha_timestamp = mktime(0, 0, 0, $mes, $dia, $year);
+            return $conversion_fecha_timestamp;
+          }else{
+            return 0;
+          }
+        } catch (Exception $e) {
+            return "Ha ocurrido un error: " . $e->getMessage();
+        }
+       
+    
+
+    }
+
 
 }
+
+
 
 
 
