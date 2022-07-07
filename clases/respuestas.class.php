@@ -47,7 +47,7 @@ class respuestas{
     }
 
 
-    public function error_401($valor = "No autorizado"){
+    public function error_401($valor = "Usuario no autorizado"){
         $this->response['status'] = "error";
         $this->response['result'] = array(
             "error_id" => "401",

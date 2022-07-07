@@ -42,7 +42,7 @@ class pacientes extends conexion {
         //convertir json en array asociativo
         $datos = json_decode($json,true);
        
-        // si en el array datos no tiene algun dato con nombre token
+        // si en el array datos no tiene algun dato con nombre token, si no existe token
         if(!isset($datos['token'])){
                 return $_respuestas->error_401();
         }else{
@@ -162,15 +162,22 @@ class pacientes extends conexion {
     // los metodos que van a ejecutar la sentencia SQL los define privados
 
     private function modificarPaciente(){
-        $query = "UPDATE " . $this->table . " SET Nombre ='" . $this->nombre . "',Direccion = '" . $this->direccion . "', DNI = '" . $this->dni . "', CodigoPostal = '" .
-        $this->codigoPostal . "', Telefono = '" . $this->telefono . "', Genero = '" . $this->genero . "', FechaNacimiento = '" . $this->fechaNacimiento . "', Correo = '" . $this->correo .
-         "' WHERE PacienteId = '" . $this->pacienteid . "'"; 
-        $resp = parent::nomQuery($query);
-        if($resp >= 1){
-             return $resp;
-        }else{
-            return 0;
+        try {
+           
+            $conversion_fecha_timestamp = parent::conversionFecha($this->fechaNacimiento);
+            $query = "UPDATE " . $this->table . " SET Nombre ='" . $this->nombre . "',Direccion = '" . $this->direccion . "', DNI = '" . $this->dni . "', CodigoPostal = '" .
+            $this->codigoPostal . "', Telefono = '" . $this->telefono . "', Genero = '" . $this->genero . "', FechaNacimiento = '" . $conversion_fecha_timestamp . "', Correo = '" . $this->correo .
+             "' WHERE PacienteId = '" . $this->pacienteid . "'"; 
+            $resp = parent::nomQuery($query);
+            if($resp >= 1){
+                 return $resp;
+            }else{
+                return 0;
+            }
+        } catch (Exception $e) {
+            return $e->getMessage();
         }
+
     }
 
 
